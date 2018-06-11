@@ -14,7 +14,7 @@ class JingdongSpider(CrawlSpider):
     price_url = 'https://p.3.cn/prices/mgets?&skuIds=J_{}%2&pduid=15286332332502030043335'
 #/list.html?cat=670,671,672&page=3&sort=sort_totalsales15_desc&trans=1&JL=6_0_0
     rules = [
-        # 提取职位列表页的链接，发送请求并交给回调函数解析，同时继续响应继续跟进提取链接
+        # 提取商品列表页的链接，发送请求并交给回调函数解析，同时继续响应继续跟进提取链接
         Rule(LinkExtractor(allow=r"cat=670,671,672&page=\d+"), callback="parse_page", follow=True),
     ]
 
